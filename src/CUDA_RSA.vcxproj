@@ -12,7 +12,8 @@
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{3B8359CD-5224-4587-8A4A-C96C036F9DB7}</ProjectGuid>
-    <RootNamespace>RSA_old</RootNamespace>
+    <RootNamespace>src</RootNamespace>
+    <ProjectName>RSA_CUDA</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">

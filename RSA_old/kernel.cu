@@ -7,8 +7,8 @@
 #include <stdlib.h>
 #include <time.h>
 #include <conio.h>
-#define MAX 6 // 48 * 32 integers - 1536 bit max
-#define THREAD_NUMBER 5
+#define MAX 30 // 48 * 32 integers - 1536 bit max
+#define THREAD_NUMBER 20
 #define INT_SIZE 32
 
 unsigned int	    
@@ -1278,41 +1278,10 @@ int main(int argc, char **argv)
 	cudaError_t cudaStatus;
 	char output [ MAX * 10 ];
 
-	if(
-	   argv[2][0] == *("e") && 
-	   argv[2][1] == *("n") && 
-	   argv[2][2] == *("c") && 
-	   argv[2][3] == *("r") && 
-	   argv[2][4] == *("y") && 
-	   argv[2][5] == *("p") && 
-	   argv[2][6] == *("t") ) mode = 1;
-   else if( 
-	   argv[2][0] == *("d") && 
-	   argv[2][1] == *("e") && 
-	   argv[2][2] == *("c") && 
-	   argv[2][3] == *("r") && 
-	   argv[2][4] == *("y") && 
-	   argv[2][5] == *("p") && 
-	   argv[2][6] == *("t") ) mode = 2;
-   else {
-	   printf("Wrong mode: must be \"encrypt\" or \"decrypt\" (case sensitive) ");
-	   goto Error;
-   }
 	
-   if( argv[3][0] == *("C") && 
-	   argv[3][1] == *("P") && 
-	   argv[3][2] == *("U")) unit = 1;
-   else if( 
-	   argv[3][0] == *("G") && 
-	   argv[3][1] == *("P") && 
-	   argv[3][2] == *("U")) unit = 2;
-   else {
-	   printf("Wrong unit: must be \"CPU\" or \"GPU\" (case sensitive) ");
-	   goto Error;
-   }
-
+	 mode = 2;
+   unit = 2;
   
-
 
 	// Choose which GPU to run on, change this on a multi-GPU system.
     cudaStatus = cudaSetDevice(0);
